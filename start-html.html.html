@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content>
+        <title>Скролинг</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style>
+            body {
+    background-color: black;
+}
+             p {
+                margin-top: 1%;
+            }
+
+            @keyframes turn {
+                from {
+                    transform: retate3d(0, 0, 0, 0);
+                }
+                to {
+                    transform: rotate3d(1, 1, 0, 360deg);
+                }
+            }
+            .cube {
+                width: 20px;
+                height: 20px;
+                transform-style: preserve-3d;
+                animation: turn 5s linear infinite;
+                margin: 50px;
+            }
+            .face {
+                width:100px;
+                height: 100px;
+                background: #0000ff;
+                border:  2px solid white;
+                position: absolute;
+                opacity: 0.75;
+                transform: translateZ(50px);
+            }
+            .front {
+                transform: translateZ(50px);
+            }
+            .back {
+                transform: translateZ(-50px) rotateY(180deg);
+            }
+            .left {
+                transform: translateX(-50px) rotateY(-90deg);
+            }
+            .right {
+                transform: translateX(50px) rotateY(90deg);
+            }
+            .top {
+                transform: translateY(-50px) rotateX(90deg);
+            }
+            .bottom {
+                transform: translateY(50px) rotateX(-90deg);
+            }
+        </style>
+        <link rel="stylesheet" href="/css/style1.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <a class="nav-link active" aria-current="page" href="start-html.html">
+                <h3 class="float-mb-start mb-0">Скролити</h3>
+            </a>
+            <nav class="nav nav-masthead justify-content-center float-mb-end">
+                <a class="nav-link active" aria-current="page" href="start-html.html">Пошук</a>
+                <a class="nav-link" href="index.html">Розширений пошук</a>      
+            </nav>
+        </header>
+        <div class="cube">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+        <main class="px-3"></main>
+        <form action="https://www.google.com/search">
+            <div class="bg-blue text-secondary px-4 py-5 text-center">
+                <div class="py-5">
+                  <h1 class="display-5 fw-bold text-white">Давай скролити зображення</h1>
+                  
+            <div class="d-flex justify-content-center">
+                <input class="input_line" type="text" name="q">
+            </div>
+            <p>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <input type="submit" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" value="Пошук зображень">
+                    <input type="hidden" name="tbm" value="isch">  
+                </div>
+            </p>
+            </div>
+                </div>
+        </form>
+        <div class="loader"></div>
+        <footer class="mt-auto text-white-50"></footer>
+        </main>
+    </body>
+</html>
